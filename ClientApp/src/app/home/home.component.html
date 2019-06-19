@@ -1,0 +1,14 @@
+<div class="col-md-12">
+  <label>Nome do Arquivo</label>
+  <input class="form-control" [(ngModel)]="usuario.arquivo" />
+  <label>Escolha um Arquivo</label>
+  <input #file type="file" multiple (change)="EnviaFoto(file.files)" />
+  <br />
+  <span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+    {{progress}}%
+  </span>
+
+  <span style="font-weight:bold;color:green;" *ngIf="message">
+    {{message}}
+  </span>
+</div>
