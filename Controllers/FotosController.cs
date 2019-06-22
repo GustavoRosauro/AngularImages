@@ -18,9 +18,10 @@ namespace AgnularImage.Controllers
             {
                 var file = Request.Form.Files[0];
                 //string folderName = "Upload";
+                var usuario = Request.Form["usuario"].ToString();
                 if (file.Length > 0)
                 {
-                    string fullPath = @"C:\Users\Acer\source\repos\AgnularImage\AgnularImage\Imagens\teste.png";
+                    string fullPath = $@"C:\Users\Acer\source\repos\AgnularImage\AgnularImage\Imagens\{usuario}.png";
                     using (var stream = new FileStream(fullPath, FileMode.Create))
                     {
                         file.CopyTo(stream);

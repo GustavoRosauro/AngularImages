@@ -13,12 +13,14 @@ export class HomeComponent implements OnInit {
   constructor(private http:HttpClient) { }
   usuario: any;
   ngOnInit() {
+    this.progress = 0.00
     this.usuario = new Usuario;
   }
   EnviaFoto(files) {
     const formData = new FormData();
     for (let file of files)
       formData.append(file.name, file)
+    formData.append('usuario', this.usuario.arquivo);
     const uploadReq = new HttpRequest('POST', 'api/Fotos/EnviaFoto', formData, {
       reportProgress: true,
     });
