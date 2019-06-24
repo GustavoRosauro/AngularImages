@@ -12,3 +12,16 @@
     {{message}}
   </span>
 </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Arquivo</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of usuarios">
+    <tr>
+      <td>{{user.foto}}</td>
+      <td><button class="btn btn-danger" (click)="dowload(user.foto)">Dowload</button></td>
+    </tr>
+  </tbody>
+</table>
